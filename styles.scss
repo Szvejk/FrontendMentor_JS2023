@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(205, 219, 223);
+	font-family: 'Ubuntu', sans-serif;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.box {
+		width: 800px;
+		height: 600px;
+		background-color: white;
+		display: flex;
+        border-radius: 20px;
+	}
+
+	.menu {
+		width: 30%;
+		background-color: rebeccapurple;
+        border-radius: 20px;
+	}
+	.info {
+		display: flex;
+		flex-direction: column;
+		height: 600px;
+		width: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.wrapper {
+		min-height: 300px;
+		min-width: 500px;
+		padding-left: 50px;
+	}
+	#emailAdress {
+		height: 40px;
+		width: 450px;
+		border: 2px solid gray;
+		border-radius: 10px;
+		margin: 20px 0px;
+	}
+	#nameText {
+		margin-top: 20px;
+		color: rgb(19, 19, 126);
+		height: 20px;
+		width: 450px;
+	}
+	.description {
+		color: gray;
+		margin-bottom: 20px;
+	}
+	.header {
+		color: rgb(14, 14, 116);
+	}
+	.head {
+		height: 30px;
+		width: 440px;
+		margin-bottom: 20px;
+	}
+	.button {
+		display: flex;
+		justify-content: flex-end;
+		align-content: center;
+	}
+	.nextStep {
+		min-width: 120px;
+		min-height: 40px;
+		border-radius: 10px;
+		border-color: transparent;
+		background-color: rgb(12, 12, 97);
+		color: white;
+		margin-top: 50px;
+	}
+}

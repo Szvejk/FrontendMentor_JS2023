@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(205, 219, 223);
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .box {
+  width: 800px;
+  height: 600px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 20px;
+}
+body .menu {
+  width: 30%;
+  background-color: rebeccapurple;
+  border-radius: 20px;
+}
+body .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 600px;
+  width: 500px;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body .wrapper {
+  min-height: 300px;
+  min-width: 500px;
+  padding-left: 50px;
+}
+body #emailAdress {
+  height: 40px;
+  width: 450px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+body #nameText {
+  margin-top: 20px;
+  color: rgb(19, 19, 126);
+  height: 20px;
+  width: 450px;
+}
+body .description {
+  color: gray;
+  margin-bottom: 20px;
+}
+body .header {
+  color: rgb(14, 14, 116);
+}
+body .head {
+  height: 30px;
+  width: 440px;
+  margin-bottom: 20px;
+}
+body .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+body .nextStep {
+  min-width: 120px;
+  min-height: 40px;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: rgb(12, 12, 97);
+  color: white;
+  margin-top: 50px;
+}/*# sourceMappingURL=styles.css.map */

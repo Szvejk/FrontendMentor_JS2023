@@ -18,6 +18,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
 }
 body .box {
   width: 800px;
@@ -28,12 +31,20 @@ body .box {
   display: flex;
   border-radius: 20px;
 }
-body .menu {
+body .box .menu {
   width: 30%;
   background-color: rebeccapurple;
   border-radius: 20px;
+  position: relative;
 }
-body .info {
+body .box .menu .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 300px;
+  margin: 10px;
+}
+body .box .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +53,7 @@ body .info {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 600px;
-  width: 500px;
+  width: 600px;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -51,52 +62,195 @@ body .info {
       -ms-flex-pack: center;
           justify-content: center;
 }
-body .wrapper {
+body .box .wrapper {
   min-height: 300px;
   min-width: 500px;
   padding-left: 50px;
 }
-body #emailAdress {
+body .box #emailAdress {
   height: 40px;
-  width: 450px;
+  width: 500px;
   border: 2px solid gray;
   border-radius: 10px;
   margin: 20px 0px;
 }
-body #nameText {
+body .box #nameText {
   margin-top: 20px;
   color: rgb(19, 19, 126);
-  height: 20px;
-  width: 450px;
+  height: 40px;
+  width: 500px;
 }
-body .description {
+body .box .description {
   color: gray;
   margin-bottom: 20px;
 }
-body .header {
+body .box .header {
   color: rgb(14, 14, 116);
 }
-body .head {
+body .box .head {
   height: 30px;
   width: 440px;
   margin-bottom: 20px;
 }
-body .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-body .nextStep {
+body .box .nextStep, body .box .backStep {
   min-width: 120px;
   min-height: 40px;
   border-radius: 10px;
   border-color: transparent;
   background-color: rgb(12, 12, 97);
   color: white;
-  margin-top: 50px;
+  margin: 20px;
+}
+body .box .number {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  border: 2px solid white;
+}
+body .box .math {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body .box .math:hover {
+  background-color: rgb(201, 51, 13);
+}
+body .box .step {
+  margin: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+body .box .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse wrap-reverse;
+          flex-flow: row-reverse wrap-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body .box .chosen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+body .box .select {
+  height: 250px;
+  display: none;
+}
+body .box .select .pselect {
+  line-height: 55px;
+}
+body .box .arcade,
+body .box .advanced,
+body .box .pro {
+  width: 120px;
+  height: 140px;
+  background-color: white;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 15px;
+  border: 2px solid rgb(196, 196, 196);
+  padding: 20px;
+}
+body .box .arcade .name,
+body .box .advanced .name,
+body .box .pro .name {
+  color: rgb(12, 12, 128);
+  font-weight: 800;
+  margin-top: 10px;
+}
+body .box .arcade .prize,
+body .box .advanced .prize,
+body .box .pro .prize {
+  font-size: 10px;
+  color: gray;
+  margin-top: 10px;
+}
+body .box .arcade:hover,
+body .box .advanced:hover,
+body .box .pro:hover {
+  border: 3px solid rgb(15, 15, 104);
+}
+body .box .img {
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .switch {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  height: 34px;
+}
+body .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+body .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin: auto;
+  display: none;
+}
+body .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+body input:checked + .slider {
+  background-color: #2196f3;
+}
+body input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196f3;
+          box-shadow: 0 0 1px #2196f3;
+}
+body input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+body .slider.round {
+  border-radius: 34px;
+  margin: auto;
+}
+body .slider.round:before {
+  border-radius: 50%;
 }/*# sourceMappingURL=styles.css.map */

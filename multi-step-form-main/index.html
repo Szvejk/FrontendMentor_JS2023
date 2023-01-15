@@ -10,26 +10,29 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
 		<title>Frontend Mentor | Multi-step form</title>
 	</head>
 	<body>
 		<main class="box">
 			<section class="menu">
-				<div class="one">
-					<div class="number">1</div>
-					STEP 1 YOUR INFO
-				</div>
-				<div class="second">
-					<div class="number">2</div>
-					STEP 2 SELECT PLAN
-				</div>
-				<div class="three">
-					<div class="number">3</div>
-					STEP 3 ADD-ONS
-				</div>
-				<div class="fourth">
-					<div class="number">4</div>
-					STEP 4 SUMMARY
+				<div class="grid">
+					<div class="math">
+						<div class="number">1</div>
+						<p class="step">Step 1</p>
+					</div>
+					<div class="math">
+						<div class="number">2</div>
+						<p class="step">Step 2</p>
+					</div>
+					<div class="math">
+						<div class="number">3</div>
+						<p class="step">Step 3</p>
+					</div>
+					<div class="math">
+						<div class="number">4</div>
+						<p class="step">Step 4</p>
+					</div>
 				</div>
 			</section>
 
@@ -47,8 +50,51 @@
 					<label id="nameText" for="email">Phone Number </label>
 					<input type="phone" id="emailAdress" name="emailAdress" />
 				</form>
-				<div class="button"><button class="nextStep">Next Step</button></div>
+
+				<section class="select">
+					<h2 class="choose">Select your plan</h2>
+					<p class="pselect">
+						You have the option of monthly or yearly billing
+					</p>
+
+					<div class="chosen"></div>
+					<div class="arcade">
+						<div class="img"><i id="im" class="fa-solid fa-gamepad"></i></div>
+						<div class="text">
+							<p class="name">Arcade</p>
+							<p class="prize">$9/mo</p>
+						</div>
+					</div>
+					<div class="advanced">
+						<div class="img"><i  id="im" class="fa-solid fa-diamond"></i></div>
+						<div class="text">
+							<p class="name">Advanced</p>
+							<p class="prize">$12/mo</p>
+						</div>
+					</div>
+					
+					<div class="pro">
+						<div class="img"><i id="im"  class="fa-solid fa-fire"></i></div>
+						<div class="text">
+							<p class="name">Pro</p>
+							<p class="prize">$15/mo</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="switch">
+					<label class="switch">
+						<input type="checkbox" />
+						<span class="slider round"></span>
+					</label>
+				</section>
+
+				<section class="buttons">
+					<button class="nextStep">Next Step</button>
+					<button class="backStep">Go back</button>
+				</section>
 			</section>
 		</main>
+		<script src="script.js"></script>
 	</body>
 </html>

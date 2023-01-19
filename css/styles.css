@@ -18,9 +18,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* Hide default HTML checkbox */
-  /* The slider */
-  /* Rounded sliders */
+  /* Center the control */
 }
 body .box {
   width: 800px;
@@ -33,7 +31,7 @@ body .box {
 }
 body .box .menu {
   width: 30%;
-  background-color: rebeccapurple;
+  background-color: rgb(68, 108, 160);
   border-radius: 20px;
   position: relative;
 }
@@ -41,7 +39,7 @@ body .box .menu .grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  height: 300px;
+  height: 400px;
   margin: 10px;
 }
 body .box .menu .grid .math {
@@ -49,9 +47,15 @@ body .box .menu .grid .math {
   display: -ms-flexbox;
   display: flex;
 }
+body .box .menu .grid .math .describeStep {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+}
 body .box .menu .grid .math:hover > .number {
-  background-color: rgb(201, 51, 13);
+  background-color: rgb(59, 130, 163);
   color: black;
+  font-weight: 500;
 }
 body .box .menu .grid .number {
   height: 30px;
@@ -59,7 +63,7 @@ body .box .menu .grid .number {
   text-align: center;
   border-radius: 50%;
   color: #fff;
-  border: 2px solid white;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,15 +81,34 @@ body .box .menu .grid .step {
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
+  font-weight: 100;
 }
 body .box .info {
   height: 600px;
   width: 600px;
+  display: grid;
+  grid-template-columns: 600px;
+  grid-template-rows: 500px 100px;
 }
 body .box .info .wrapper {
   min-height: 300px;
   min-width: 500px;
-  padding-left: 50px;
+  margin: 20px;
+  grid-column: 1/1;
+  grid-row: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 body .box .info .wrapper .header {
   color: rgb(14, 14, 116);
@@ -99,34 +122,25 @@ body .box .info .wrapper .description {
   color: gray;
   margin-bottom: 20px;
 }
-body .box .info .step1-input {
+body .box .info .step1a-input,
+body .box .info .step1b-input,
+body .box .info .step1c-input {
   height: 40px;
   width: 500px;
   border: 2px solid gray;
   border-radius: 10px;
-  margin: 20px 0px;
 }
 body .box .info #nameText {
   margin-top: 20px;
   color: rgb(19, 19, 126);
   height: 40px;
   width: 500px;
-}
-body .box .nextStep,
-body .box .backStep {
-  min-width: 120px;
-  min-height: 40px;
-  border-radius: 10px;
-  border-color: transparent;
-  background-color: rgb(12, 12, 97);
-  color: white;
-  margin: 20px;
+  display: block;
 }
 body .box .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 500px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-flow: row-reverse wrap-reverse;
@@ -134,7 +148,30 @@ body .box .buttons {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: auto;
+  grid-column: 1/1;
+  grid-row: 2/3;
+}
+body .box .buttons .nextStep,
+body .box .buttons .backStep {
+  width: 120px;
+  height: 40px;
+  border-radius: 7px;
+  border-color: transparent;
+  background-color: rgb(12, 12, 97);
+  color: white;
+  margin: 20px;
+  font-weight: 400;
+}
+body .box .buttons .nextStep .next,
+body .box .buttons .nextStep .back,
+body .box .buttons .backStep .next,
+body .box .buttons .backStep .back {
+  font-weight: 600;
+}
+body .box .buttons .nextStep:hover,
+body .box .buttons .backStep:hover {
+  background-color: #fff;
+  color: rgb(12, 12, 97);
 }
 body .box .chosen {
   display: -webkit-box;
@@ -145,8 +182,26 @@ body .box .chosen {
           justify-content: flex-end;
 }
 body .box .select {
-  height: 250px;
+  max-height: 500px;
   display: none;
+  grid-column: 1/1;
+  grid-row: 1/2;
+}
+body .box .select .secondView {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 body .box .select .pselect {
   line-height: 55px;
@@ -154,8 +209,8 @@ body .box .select .pselect {
 body .box .arcade,
 body .box .advanced,
 body .box .pro {
-  width: 120px;
-  height: 140px;
+  width: 150px;
+  height: 200px;
   background-color: white;
   margin: 10px;
   display: inline-block;
@@ -197,58 +252,64 @@ body .box .img {
       -ms-flex-align: center;
           align-items: center;
 }
-body .switch {
-  position: relative;
+body .switcher {
+  height: 50px;
+  width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60px;
-  height: 34px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-body .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-body .slider {
-  position: absolute;
+body .toggle-control {
+  margin-top: 30px;
+  display: block;
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 12px;
   cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+body .toggle-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+body .toggle-control input:checked ~ .control {
+  background-color: rgb(9, 24, 104);
+}
+body .toggle-control input:checked ~ .control:after {
+  left: 60px;
+}
+body .toggle-control .control {
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  margin: auto;
-  display: none;
+  height: 25px;
+  width: 80px;
+  border-radius: 12.5px;
+  background-color: darkgray;
+  -webkit-transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in;
 }
-body .slider:before {
-  position: absolute;
+body .toggle-control .control:after {
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-body input:checked + .slider {
-  background-color: #2196f3;
-}
-body input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #2196f3;
-          box-shadow: 0 0 1px #2196f3;
-}
-body input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  transform: translateX(26px);
-}
-body .slider.round {
-  border-radius: 34px;
-  margin: auto;
-}
-body .slider.round:before {
-  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 12.5px;
+  background: white;
+  -webkit-transition: left 0.15s ease-in;
+  transition: left 0.15s ease-in;
 }/*# sourceMappingURL=styles.css.map */

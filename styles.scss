@@ -20,21 +20,27 @@ body {
 
 		.menu {
 			width: 30%;
-			background-color: rebeccapurple;
+			background-color: rgb(68, 108, 160);
 			border-radius: 20px;
 			position: relative;
 			.grid {
 				display: grid;
 				grid-template-columns: 1fr;
 				grid-template-rows: 1fr 1fr 1fr 1fr;
-				height: 300px;
+				height: 400px;
 				margin: 10px;
 				.math {
 					display: flex;
+					.describeStep {
+						text-transform: uppercase;
+						font-weight: 400;
+						color: white;
+					}
 				}
 				.math:hover > .number {
-					background-color: rgb(201, 51, 13);
+					background-color: rgb(59, 130, 163);
 					color: black;
+					font-weight: 500;
 				}
 				.number {
 					height: 30px;
@@ -42,7 +48,7 @@ body {
 					text-align: center;
 					border-radius: 50%;
 					color: #fff;
-					border: 2px solid white;
+					border: 1px solid white;
 					display: flex;
 					align-items: center;
 					justify-content: center;
@@ -51,17 +57,27 @@ body {
 					margin: 10px;
 					flex-direction: column;
 					color: white;
+					font-weight: 100;
 				}
 			}
 		}
 		.info {
 			height: 600px;
 			width: 600px;
+			display: grid;
+			grid-template-columns: 600px;
+			grid-template-rows: 500px 100px;
 
 			.wrapper {
 				min-height: 300px;
 				min-width: 500px;
-				padding-left: 50px;
+				margin: 20px;
+				grid-column: 1/1;
+				grid-row: 1/2;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 
 				.header {
 					color: rgb(14, 14, 116);
@@ -76,37 +92,52 @@ body {
 					margin-bottom: 20px;
 				}
 			}
-			.step1-input {
+
+			.step1a-input,
+			.step1b-input,
+			.step1c-input {
 				height: 40px;
 				width: 500px;
 				border: 2px solid gray;
 				border-radius: 10px;
-				margin: 20px 0px;
 			}
 			#nameText {
 				margin-top: 20px;
 				color: rgb(19, 19, 126);
 				height: 40px;
 				width: 500px;
+				display: block;
 			}
-		}
-
-		.nextStep,
-		.backStep {
-			min-width: 120px;
-			min-height: 40px;
-			border-radius: 10px;
-			border-color: transparent;
-			background-color: rgb(12, 12, 97);
-			color: white;
-			margin: 20px;
 		}
 		.buttons {
 			display: flex;
-			width: 500px;
+
 			flex-flow: row-reverse wrap-reverse;
 			justify-content: space-between;
-			margin-top: auto;
+
+			grid-column: 1/1;
+			grid-row: 2/3;
+
+			.nextStep,
+			.backStep {
+				width: 120px;
+				height: 40px;
+				border-radius: 7px;
+				border-color: transparent;
+				background-color: rgb(12, 12, 97);
+				color: white;
+				margin: 20px;
+				font-weight: 400;
+				.next,
+				.back {
+					font-weight: 600;
+				}
+			}
+			.nextStep:hover,
+			.backStep:hover {
+				background-color: #fff;
+				color: rgb(12, 12, 97);
+			}
 		}
 
 		.chosen {
@@ -114,9 +145,17 @@ body {
 			justify-content: flex-end;
 		}
 		.select {
-			height: 250px;
+			max-height: 500px;
 			display: none;
-
+			grid-column: 1/1;
+			grid-row: 1/2;
+			.secondView {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
 			.pselect {
 				line-height: 55px;
 			}
@@ -125,8 +164,8 @@ body {
 		.arcade,
 		.advanced,
 		.pro {
-			width: 120px;
-			height: 140px;
+			width: 150px;
+			height: 200px;
 			background-color: white;
 			margin: 10px;
 			display: inline-block;
@@ -160,68 +199,79 @@ body {
 			align-items: center;
 		}
 	}
-	.switch {
-		position: relative;
+	.switcher {
+		height: 50px;
+		width: 500px;
 		display: flex;
-		width: 60px;
-		height: 34px;
+		align-content: center;
+		justify-content: center;
 	}
 
-	/* Hide default HTML checkbox */
-	.switch input {
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
+	// Tweak these to change the style of the toggle
+	$toggle-background-color-on: rgb(9, 24, 104);
+	$toggle-background-color-off: darkgray;
+	$toggle-control-color: white;
+	$toggle-width: 80px;
+	$toggle-height: 25px;
+	$toggle-gutter: 5px;
+	$toggle-radius: 50%;
+	$toggle-control-speed: 0.15s;
+	$toggle-control-ease: ease-in;
 
-	/* The slider */
-	.slider {
-		position: absolute;
+	// These are our computed variables
+	// change at your own risk.
+	$toggle-radius: $toggle-height / 2;
+	$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+	.toggle-control {
+		margin-top: 30px;
+		display: block;
+		position: relative;
+		padding-left: $toggle-width;
+		margin-bottom: 12px;
 		cursor: pointer;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: #ccc;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-		margin: auto;
-		display: none;
+		font-size: 22px;
+		user-select: none;
+
+		input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
+		}
+
+		input:checked ~ .control {
+			background-color: $toggle-background-color-on;
+
+			&:after {
+				left: $toggle-width - $toggle-control-size - $toggle-gutter;
+			}
+		}
+
+		.control {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: $toggle-height;
+			width: $toggle-width;
+			border-radius: $toggle-radius;
+			background-color: $toggle-background-color-off;
+			transition: background-color $toggle-control-speed $toggle-control-ease;
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: $toggle-gutter;
+				top: $toggle-gutter;
+				width: $toggle-control-size;
+				height: $toggle-control-size;
+				border-radius: $toggle-radius;
+				background: $toggle-control-color;
+				transition: left $toggle-control-speed $toggle-control-ease;
+			}
+		}
 	}
 
-	.slider:before {
-		position: absolute;
-		content: '';
-		height: 26px;
-		width: 26px;
-		left: 4px;
-		bottom: 4px;
-		background-color: white;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-	}
-
-	input:checked + .slider {
-		background-color: #2196f3;
-	}
-
-	input:focus + .slider {
-		box-shadow: 0 0 1px #2196f3;
-	}
-
-	input:checked + .slider:before {
-		-webkit-transform: translateX(26px);
-		-ms-transform: translateX(26px);
-		transform: translateX(26px);
-	}
-
-	/* Rounded sliders */
-	.slider.round {
-		border-radius: 34px;
-		margin: auto;
-	}
-
-	.slider.round:before {
-		border-radius: 50%;
-	}
+	/* Center the control */
 }

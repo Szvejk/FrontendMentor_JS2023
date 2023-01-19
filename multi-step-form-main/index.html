@@ -22,21 +22,21 @@
 				<div class="grid">
 					<div class="math">
 						<div class="number">1</div>
-						<div><p class="step">Step 1</p><p>Text</p></div>
+						<div><p class="step">Step 1</p><p class="describeStep">Your info</p></div>
 						
 					</div>
 					<div class="math">
 						<div class="number">2</div>
-						<p class="step">Step 2</p>
+						<div> <p class="step">Step 2</p><p class="describeStep">Select plan</p></div>
 					</div>
 					<div class="math">
 						<div class="number">3</div>
-						<p class="step">Step 3</p>
+						<div> <p class="step">Step 3</p><p class="describeStep">Add-ons</p></div>
 					</div>
 					<div class="math">
 						<div class="number">4</div>
-						<p class="step">Step 4</p>
-					</div>
+						<div><p class="step">Step 4</p><p class="describeStep">summary </p>
+					</div></div>
 				</div>
 			</aside>
 
@@ -46,21 +46,27 @@
 					<p class="description">
 						Please provide your name, email address and phone number.
 					</p>
-
-					<label id="nameText" for="name">Name </label>
-					<input type="text" class="step1-input" name="fname" />
-					<label id="nameText" for="email">Email Adress </label>
-					<input type="text" class="step1-input" id="emailAdress" name="emailAdress" />
-					<label id="nameText" for="email">Phone Number </label>
-					<input type="phone" class="step1-input" name="emailAdress" />
+			<div class="firstInput">
+	 			<label id="nameText" for="name">Name </label>
+					<input type="text" class="step1a-input" name="fname" /> </div>
+					
+			<div class="secondInput"><label id="nameText" for="email">Email Adress </label>
+					<input type="text" class="step1b-input" id="emailAdress" name="emailAdress" /> </di>
+					
+			<div class="thirdInput"> <label id="nameText" for="email">Phone Number </label>
+					<input type="phone" class="step1c-input" name="emailAdress" />
 				</form>
+			</div>
+					
 
 				<section class="select">
+		<div class="secondView"> 
+
 					<h2 class="choose">Select your plan</h2>
 					<p class="pselect">
 						You have the option of monthly or yearly billing
 					</p>
-
+			<div class="rows"> 
 						<div class="arcade">
 							<div class="img"><i id="im" class="fa-solid fa-gamepad fa-2xl"></i></div>
 							<div class="text">
@@ -83,19 +89,35 @@
 							<p class="name">Pro</p>
 							<p class="prize">$15/mo</p>
 						</div>
+
 					</div>
+					<div class="switcher"> 
+					<label class="toggle-control">
+  <input type="checkbox" checked="checked">
+  <span class="control"></span>
+</label>
+</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
 				</section>
 
-				<section>
-					<label class="switch">
-						<input type="checkbox" />
-						<span class="slider round" id="switch"></span>
-					</label>
-				</section>
+
+		
+
 
 				<footer class="buttons">
-					<button class="nextStep">Next Step</button>
-					<button class="backStep">Go back</button>
+					<button class="nextStep"><p class="next"> Next Step</p></button>
+					<button class="backStep"><p class="back"> Go back</p></button>
 				</footer>
 			</section>
 		</main>

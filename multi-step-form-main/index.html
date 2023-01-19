@@ -18,11 +18,12 @@
 	</head>
 	<body>
 		<main class="box">
-			<section class="menu">
+			<aside class="menu">
 				<div class="grid">
 					<div class="math">
 						<div class="number">1</div>
-						<p class="step">Step 1</p>
+						<div><p class="step">Step 1</p><p>Text</p></div>
+						
 					</div>
 					<div class="math">
 						<div class="number">2</div>
@@ -37,7 +38,7 @@
 						<p class="step">Step 4</p>
 					</div>
 				</div>
-			</section>
+			</aside>
 
 			<section class="info">
 				<form class="wrapper">
@@ -47,11 +48,11 @@
 					</p>
 
 					<label id="nameText" for="name">Name </label>
-					<input type="text" id="emailAdress" name="fname" />
+					<input type="text" class="step1-input" name="fname" />
 					<label id="nameText" for="email">Email Adress </label>
-					<input type="text" id="emailAdress" name="emailAdress" />
+					<input type="text" class="step1-input" id="emailAdress" name="emailAdress" />
 					<label id="nameText" for="email">Phone Number </label>
-					<input type="phone" id="emailAdress" name="emailAdress" />
+					<input type="phone" class="step1-input" name="emailAdress" />
 				</form>
 
 				<section class="select">
@@ -61,7 +62,7 @@
 					</p>
 
 						<div class="arcade">
-							<div class="img"><i id="im" class="fa-solid fa-gamepad"></i></div>
+							<div class="img"><i id="im" class="fa-solid fa-gamepad fa-2xl"></i></div>
 							<div class="text">
 								<p class="name">Arcade</p>
 								<p class="prize">$9/mo</p>
@@ -85,19 +86,19 @@
 					</div>
 				</section>
 
-				<section class="switch">
+				<section>
 					<label class="switch">
 						<input type="checkbox" />
-						<span class="slider round"></span>
+						<span class="slider round" id="switch"></span>
 					</label>
 				</section>
 
-				<section class="buttons">
+				<footer class="buttons">
 					<button class="nextStep">Next Step</button>
 					<button class="backStep">Go back</button>
-				</section>
+				</footer>
 			</section>
 		</main>
-		<script src="script.js"></script>
+		<script src="../script.js"></script>
 	</body>
 </html>

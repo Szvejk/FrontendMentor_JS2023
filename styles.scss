@@ -32,8 +32,9 @@ body {
 				.math {
 					display: flex;
 				}
-				.math:hover {
+				.math:hover > .number {
 					background-color: rgb(201, 51, 13);
+					color: black;
 				}
 				.number {
 					height: 30px;
@@ -42,6 +43,9 @@ body {
 					border-radius: 50%;
 					color: #fff;
 					border: 2px solid white;
+					display: flex;
+					align-items: center;
+					justify-content: center;
 				}
 				.step {
 					margin: 10px;
@@ -51,13 +55,8 @@ body {
 			}
 		}
 		.info {
-			display: flex;
-			flex-direction: column;
 			height: 600px;
 			width: 600px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 
 			.wrapper {
 				min-height: 300px;
@@ -77,7 +76,7 @@ body {
 					margin-bottom: 20px;
 				}
 			}
-			#emailAdress {
+			.step1-input {
 				height: 40px;
 				width: 500px;
 				border: 2px solid gray;
@@ -107,6 +106,7 @@ body {
 			width: 500px;
 			flex-flow: row-reverse wrap-reverse;
 			justify-content: space-between;
+			margin-top: auto;
 		}
 
 		.chosen {

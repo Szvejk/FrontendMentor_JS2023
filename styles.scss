@@ -198,80 +198,122 @@ body {
 			justify-content: center;
 			align-items: center;
 		}
-	}
-	.switcher {
-		height: 50px;
-		width: 500px;
-		display: flex;
-		align-content: center;
-		justify-content: center;
-	}
 
-	// Tweak these to change the style of the toggle
-	$toggle-background-color-on: rgb(9, 24, 104);
-	$toggle-background-color-off: darkgray;
-	$toggle-control-color: white;
-	$toggle-width: 80px;
-	$toggle-height: 25px;
-	$toggle-gutter: 5px;
-	$toggle-radius: 50%;
-	$toggle-control-speed: 0.15s;
-	$toggle-control-ease: ease-in;
+		.switcher {
+			height: 50px;
+			width: 500px;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+		}
 
-	// These are our computed variables
-	// change at your own risk.
-	$toggle-radius: $toggle-height / 2;
-	$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+		// Tweak these to change the style of the toggle
+		$toggle-background-color-on: rgb(9, 24, 104);
+		$toggle-background-color-off: darkgray;
+		$toggle-control-color: white;
+		$toggle-width: 80px;
+		$toggle-height: 25px;
+		$toggle-gutter: 5px;
+		$toggle-radius: 50%;
+		$toggle-control-speed: 0.15s;
+		$toggle-control-ease: ease-in;
 
-	.toggle-control {
-		margin-top: 30px;
-		display: block;
-		position: relative;
-		padding-left: $toggle-width;
-		margin-bottom: 12px;
-		cursor: pointer;
-		font-size: 22px;
-		user-select: none;
+		// These are our computed variables
+		// change at your own risk.
+		$toggle-radius: $toggle-height / 2;
+		$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 
-		input {
-			position: absolute;
-			opacity: 0;
+		.toggle-control {
+			margin-top: 30px;
+			display: block;
+			position: relative;
+			padding-left: $toggle-width;
+			margin-bottom: 12px;
 			cursor: pointer;
-			height: 0;
-			width: 0;
-		}
+			font-size: 22px;
+			user-select: none;
 
-		input:checked ~ .control {
-			background-color: $toggle-background-color-on;
+			input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+			}
 
-			&:after {
-				left: $toggle-width - $toggle-control-size - $toggle-gutter;
+			input:checked ~ .control {
+				background-color: $toggle-background-color-on;
+
+				&:after {
+					left: $toggle-width - $toggle-control-size - $toggle-gutter;
+				}
+			}
+
+			.control {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: $toggle-height;
+				width: $toggle-width;
+				border-radius: $toggle-radius;
+				background-color: $toggle-background-color-off;
+				transition: background-color $toggle-control-speed $toggle-control-ease;
+
+				&:after {
+					content: '';
+					position: absolute;
+					left: $toggle-gutter;
+					top: $toggle-gutter;
+					width: $toggle-control-size;
+					height: $toggle-control-size;
+					border-radius: $toggle-radius;
+					background: $toggle-control-color;
+					transition: left $toggle-control-speed $toggle-control-ease;
+				}
 			}
 		}
 
-		.control {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: $toggle-height;
-			width: $toggle-width;
-			border-radius: $toggle-radius;
-			background-color: $toggle-background-color-off;
-			transition: background-color $toggle-control-speed $toggle-control-ease;
+		.pickAdd-ons {
+			height: 500px;
+			width: 600px;
 
-			&:after {
-				content: '';
-				position: absolute;
-				left: $toggle-gutter;
-				top: $toggle-gutter;
-				width: $toggle-control-size;
-				height: $toggle-control-size;
-				border-radius: $toggle-radius;
-				background: $toggle-control-color;
-				transition: left $toggle-control-speed $toggle-control-ease;
+			.thirdView {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				height: 100%;
+				width: 100%;
+				.textBox{
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					width: 400px;
+				}
+			}
+
+			.buttons-third {
+				display: flex;
+				flex-direction: column;
+			align-items: center;
+			justify-items: center;
+				max-height: 500px;
+				width: 600px;
+			}
+			.pick1,
+			.pick2,
+			.pick3 {
+				width: 400px;
+				height: 80px;
+				display: flex;
+				border: 2px solid rgb(78, 78, 124) ;
+				border-radius: 10px;
+				align-items: flex-start;
+				margin: 10px 40px;
+				.add-ons {
+					margin: 10px;
+				}
 			}
 		}
 	}
-
-	/* Center the control */
 }

@@ -6,313 +6,143 @@
 body {
 	background-color: rgb(205, 219, 223);
 	font-family: 'Ubuntu', sans-serif;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	.box {
-		width: 800px;
-		height: 600px;
-		background-color: white;
+	font-family: 'Roboto', sans-serif;
+	main {
+		height: 800px;
+		width: 1000px;
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 		display: flex;
-		border-radius: 20px;
+		padding: 20px;
 
-		.menu {
-			width: 30%;
-			background-color: rgb(68, 108, 160);
-			border-radius: 20px;
-			position: relative;
-			.grid {
-				display: grid;
-				grid-template-columns: 1fr;
-				grid-template-rows: 1fr 1fr 1fr 1fr;
-				height: 400px;
-				margin: 10px;
-				.math {
-					display: flex;
-					.describeStep {
-						text-transform: uppercase;
-						font-weight: 400;
-						color: white;
-					}
-				}
-				.math:hover > .number {
-					background-color: rgb(59, 130, 163);
-					color: black;
-					font-weight: 500;
-				}
+		.navigation {
+			background-color: rgb(28, 64, 182);
+			width: 300px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			height: 100%;
+			.listElement {
+				display: flex;
+				margin-bottom: 40px;
 				.number {
-					height: 30px;
-					width: 30px;
-					text-align: center;
-					border-radius: 50%;
-					color: #fff;
 					border: 1px solid white;
+					border-radius: 50%;
+					width: 40px;
+					height: 40px;
 					display: flex;
 					align-items: center;
 					justify-content: center;
-				}
-				.step {
-					margin: 10px;
-					flex-direction: column;
-					color: white;
-					font-weight: 100;
-				}
-			}
-		}
-		.info {
-			height: 600px;
-			width: 600px;
-			display: grid;
-			grid-template-columns: 600px;
-			grid-template-rows: 500px 100px;
-
-			.wrapper {
-				min-height: 300px;
-				min-width: 500px;
-				margin: 20px;
-				grid-column: 1/1;
-				grid-row: 1/2;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-
-				.header {
-					color: rgb(14, 14, 116);
-				}
-				.head {
-					height: 30px;
-					width: 440px;
-					margin-bottom: 20px;
-				}
-				.description {
-					color: gray;
-					margin-bottom: 20px;
-				}
-			}
-
-			.step1a-input,
-			.step1b-input,
-			.step1c-input {
-				height: 40px;
-				width: 500px;
-				border: 2px solid gray;
-				border-radius: 10px;
-			}
-			#nameText {
-				margin-top: 20px;
-				color: rgb(19, 19, 126);
-				height: 40px;
-				width: 500px;
-				display: block;
-			}
-		}
-		.buttons {
-			display: flex;
-
-			flex-flow: row-reverse wrap-reverse;
-			justify-content: space-between;
-
-			grid-column: 1/1;
-			grid-row: 2/3;
-
-			.nextStep,
-			.backStep {
-				width: 120px;
-				height: 40px;
-				border-radius: 7px;
-				border-color: transparent;
-				background-color: rgb(12, 12, 97);
-				color: white;
-				margin: 20px;
-				font-weight: 400;
-				.next,
-				.back {
+					color: #fff;
 					font-weight: 600;
+					transition: 0.2s linear;
+					&:hover {
+						background-color: rgb(63, 158, 161);
+						color: black;
+					}
 				}
-			}
-			.nextStep:hover,
-			.backStep:hover {
-				background-color: #fff;
-				color: rgb(12, 12, 97);
-			}
-		}
 
-		.chosen {
-			display: flex;
-			justify-content: flex-end;
-		}
-		.select {
-			max-height: 500px;
-			display: none;
-			grid-column: 1/1;
-			grid-row: 1/2;
-			.secondView {
-				height: 100%;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
-			.pselect {
-				line-height: 55px;
-			}
-		}
-
-		.arcade,
-		.advanced,
-		.pro {
-			width: 150px;
-			height: 200px;
-			background-color: white;
-			margin: 10px;
-			display: inline-block;
-			border-radius: 15px;
-			border: 2px solid rgb(196, 196, 196);
-			padding: 20px;
-			.name {
-				color: rgb(12, 12, 128);
-				font-weight: 800;
-				margin-top: 10px;
-			}
-			.prize {
-				font-size: 10px;
-				color: gray;
-				margin-top: 10px;
-			}
-		}
-		.arcade:hover,
-		.advanced:hover,
-		.pro:hover {
-			border: 3px solid rgb(15, 15, 104);
-		}
-
-		.img {
-			width: 50px;
-			height: 50px;
-			background-color: yellow;
-			border-radius: 50%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.switcher {
-			height: 50px;
-			width: 500px;
-			display: flex;
-			align-content: center;
-			justify-content: center;
-		}
-
-		// Tweak these to change the style of the toggle
-		$toggle-background-color-on: rgb(9, 24, 104);
-		$toggle-background-color-off: darkgray;
-		$toggle-control-color: white;
-		$toggle-width: 80px;
-		$toggle-height: 25px;
-		$toggle-gutter: 5px;
-		$toggle-radius: 50%;
-		$toggle-control-speed: 0.15s;
-		$toggle-control-ease: ease-in;
-
-		// These are our computed variables
-		// change at your own risk.
-		$toggle-radius: $toggle-height / 2;
-		$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
-
-		.toggle-control {
-			margin-top: 30px;
-			display: block;
-			position: relative;
-			padding-left: $toggle-width;
-			margin-bottom: 12px;
-			cursor: pointer;
-			font-size: 22px;
-			user-select: none;
-
-			input {
-				position: absolute;
-				opacity: 0;
-				cursor: pointer;
-				height: 0;
-				width: 0;
-			}
-
-			input:checked ~ .control {
-				background-color: $toggle-background-color-on;
-
-				&:after {
-					left: $toggle-width - $toggle-control-size - $toggle-gutter;
-				}
-			}
-
-			.control {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: $toggle-height;
-				width: $toggle-width;
-				border-radius: $toggle-radius;
-				background-color: $toggle-background-color-off;
-				transition: background-color $toggle-control-speed $toggle-control-ease;
-
-				&:after {
-					content: '';
-					position: absolute;
-					left: $toggle-gutter;
-					top: $toggle-gutter;
-					width: $toggle-control-size;
-					height: $toggle-control-size;
-					border-radius: $toggle-radius;
-					background: $toggle-control-color;
-					transition: left $toggle-control-speed $toggle-control-ease;
-				}
-			}
-		}
-
-		.pickAdd-ons {
-			height: 500px;
-			width: 600px;
-
-			.thirdView {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-				height: 100%;
-				width: 100%;
-				.textBox{
+				.textAside {
+					margin-left: 15px;
 					display: flex;
 					flex-direction: column;
-					align-items: flex-start;
-					width: 400px;
+					color: #fff;
+					line-height: 22px;
+
+					:nth-child(1) {
+						font-weight: 300;
+						text-transform: uppercase;
+						color: rgb(184, 181, 181);
+					}
+					:nth-child(2) {
+						font-weight: 600;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+					}
+				}
+			}
+		}
+
+		.content {
+			height: 100%;
+			width: 700px;
+			display: grid;
+			grid-template-columns: 700px;
+			grid-template-rows: 650px 110px;
+
+			footer {
+				display: flex;
+				align-items: center;
+				height: 110px;
+				width: 700px;
+				justify-content: space-around;
+				flex-direction: row-reverse;
+				.next,
+				.back {
+					height: 50px;
+					width: 150px;
+					background-color: rgb(13, 23, 58);
+					border-color: transparent;
+					color: #fff;
+					border-radius: 10px;
 				}
 			}
 
-			.buttons-third {
+			.wrapperFlex {
+				height: 760px;
+				width: 700px;
 				display: flex;
-				flex-direction: column;
-			align-items: center;
-			justify-items: center;
-				max-height: 500px;
-				width: 600px;
-			}
-			.pick1,
-			.pick2,
-			.pick3 {
-				width: 400px;
-				height: 80px;
-				display: flex;
-				border: 2px solid rgb(78, 78, 124) ;
-				border-radius: 10px;
-				align-items: flex-start;
-				margin: 10px 40px;
-				.add-ons {
-					margin: 10px;
+				justify-content: center;
+				padding-top: 60px;
+
+				.form {
+					width: 600px;
+					height: 400px;
+					grid-column: 1/1;
+					grid-row: 1/2;
+					display: flex;
+					flex-direction: column;
+					.header {
+						font-size: 30px;
+						color: rgb(6, 6, 73);
+					}
+					.describe {
+						color: gray;
+						margin-top: 10px;
+						font-weight: 400;
+						margin-bottom: 30px;
+					}
+					.inputContainer {
+						display: flex;
+						flex-direction: column;
+
+						label {
+							font-weight: 600;
+							color: rgb(15, 15, 105);
+							padding-bottom: 10px;
+						}
+						input {
+							height: 50px;
+							border-radius: 5px;
+							border: 1px solid gray;
+							padding-left: 10px;
+							font-weight: 600;
+							margin-bottom: 30px;
+						}
+					}
 				}
+			}
+
+			.secondView {
+				display: none;
+				height: 200px;
+				width: 300px;
 			}
 		}
 	}

@@ -10,144 +10,88 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
 			rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
 		/>
+
 		<title>Frontend Mentor | Multi-step form</title>
 	</head>
 	<body>
-		<main class="box">
-			<aside class="menu">
-				<div class="grid">
-					<div class="math">
-						<div class="number">1</div>
-						<div><p class="step">Step 1</p><p class="describeStep">Your info</p></div>
-						
+		<main>
+			<aside class="navigation">
+				<div class="listElement">
+					<div class="number">1</div>
+					<div class="textAside">
+						<span>Step 1</span>
+						<span>Your info</span>
 					</div>
-					<div class="math">
-						<div class="number">2</div>
-						<div> <p class="step">Step 2</p><p class="describeStep">Select plan</p></div>
+				</div>
+				<div class="listElement">
+					<div class="number">2</div>
+					<div class="textAside">
+						<span>Step 2</span>
+						<span>select plan</span>
 					</div>
-					<div class="math">
-						<div class="number">3</div>
-						<div> <p class="step">Step 3</p><p class="describeStep">Add-ons</p></div>
+				</div>
+				<div class="listElement">
+					<div class="number">3</div>
+					<div class="textAside">
+						<span>Step 3</span>
+						<span>add-ons</span>
 					</div>
-					<div class="math">
-						<div class="number">4</div>
-						<div><p class="step">Step 4</p><p class="describeStep">summary </p></div>
+				</div>
+				<div class="listElement">
+					<div class="number">4</div>
+					<div class="textAside">
+						<span>Step 4</span>
+						<span>Summary</span>
 					</div>
 				</div>
 			</aside>
 
-
-			<section class="info">
-				<form class="wrapper">
-					<div class="head"><h2 class="header">Personal Info</h2></div>
-					<p class="description">
-						Please provide your name, email address and phone number.
-					</p>
-				<div class="firstInput">
-	 			<label id="nameText" for="name">Name </label>
-					<input type="text" class="step1a-input" name="fname" /> </div>
-					
-				<div class="secondInput"><label id="nameText" for="email">Email Adress </label>
-					<input type="text" class="step1b-input" id="emailAdress" name="emailAdress" /> </div>
-					
-					<div class="thirdInput"> <label id="nameText" for="email">Phone Number </label>
-					<input type="phone" class="step1c-input" name="emailAdress" />
-				</form>
+			<div class="content">
+				<div class="wrapperFlex">
+					<div class="form">
+						<h2 class="header">Personal info</h2>
+						<h4 class="describe">
+							Please provide your name, email address and phone number.
+						</h4>
+						<div class="inputContainer">
+							<label for="Name">Name</label>
+							<input id="Name" type="text" placeholder="e.g.Stephen King" />
+						</div>
+						<div class="inputContainer">
+							<label for="Email Address">Email Adress</label>
+							<input
+								id="Email Adress"
+								type="text"
+								placeholder="e.g.stephenking@lorem.com"
+							/>
+						</div>
+						<div class="inputContainer">
+							<label for="Phone Number">Phone Number</label>
+							<input
+								id="Phone Number"
+								type="text"
+								placeholder="e.g. +123 456 789"
+							/>
+						</div>
 					</div>
+				</div>
+
+				<!-- secondView -->
+				<div class="secondView">
 					
+				</div>
 
-				<section class="select">
-					<div class="secondView"> 
-
-					<h2 class="choose">Select your plan</h2>
-					<p class="pselect">
-						You have the option of monthly or yearly billing
-					</p>
-						<div class="rows"> 
-						<div class="arcade">
-							<div class="separate">
-							<div class="img"><i id="im" class="fa-solid fa-gamepad fa-2xl"></i></div>
-							<div class="text">
-								<p class="name">Arcade</p>
-								<p class="prize">$9/mo</p>
-								 </div>
-							</div>
-						</div>
-						<div class="advanced">
-							<div class="separate"> 
-							<div class="img"><i id="im" class="fa-solid fa-diamond"></i></div>
-							<div class="text">
-								<p class="name">Advanced</p>
-								<p class="prize">$12/mo</p>
-								</div>
-							</div>
-						</div>
-					
-
-					<div class="pro">
-						<div class="separate"> 
-						<div class="img"><i id="im" class="fa-solid fa-fire"></i></div>
-						<div class="text">
-							<p class="name">Pro</p>
-							<p class="prize">$15/mo</p>
-							</div>
-						</div>
-
-					</div>
-
-					</div>
-
-
-					<div class="switcher"> 
-					<label class="toggle-control">
- 					 <input type="checkbox" checked="checked">
- 						 <span class="control"></span>
-					</label>
-					</div>
-						</div>
-							</div>
-
-			
-			</section>
-		
-<section class="pickAdd-ons"> 
-	<div class="thirdView"> 
-		<div class="textBox"> 
-				<h2 class="textThirdSection">
-						Pick add-ons
-							</h2>
-							<p class="describeThird">Add-ons help enhance your gaming experience</p>
-						</div>
-			<div class="buttons-third"> 
-				<button class="pick1">
-					<input type="checkbox" class="add-ons" name="ons" >
-				</button>
-
-				<button class="pick2">
-					<input type="checkbox" class="add-ons" name="ons" >
-				</button>
-
-				<button class="pick3">
-					<input type="checkbox" class="add-ons" name="ons" >
-				</button>
-			</div>
-</div>
-
-			</section>
-		
-<!-- view 3 -->
-			
-
-
-				<footer class="buttons">
-					<button class="nextStep"><p class="next"> Next Step</p></button>
-					<button class="backStep"><p class="back"> Go back</p></button>
+				<footer>
+					<button class="next">Next Step</button>
+					<button class="back">Come Back</button>
 				</footer>
-	
+			</div>
 		</main>
 		<script src="../script.js"></script>
 	</body>

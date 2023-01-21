@@ -1,23 +1,10 @@
-const next = document.querySelector('.nextStep');
-const back = document.querySelector('.backStep');
-const input = document.querySelector('#emailAdress');
-const select = document.querySelector('.select');
-const wrapper = document.querySelector('.wrapper');
+const form = document.querySelector('.form');
+const next = document.querySelector('.next');
 const secondView = document.querySelector('.secondView');
-const pick = document.querySelector('.pickAdd-ons');
+const wrapper = document.querySelector('.wrapperFlex')
 
-pick.style.display = 'none';
 next.addEventListener('click', () => {
-	// if (input.value === '') {
-	// 	//alert('bug');
-	// } else {
-	select.style.display = 'block';
-	wrapper.style.display = 'none';
-
-	next.addEventListener('click', () => {
-		select.style.display = 'none';
-		pick.style.display = 'block';
-	});
-
-	//}
+    wrapper.style.display = 'none';
+	form.style.display = 'none';
+	secondView.style.display = 'block';
 });

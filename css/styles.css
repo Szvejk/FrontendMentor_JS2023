@@ -8,7 +8,7 @@
 body {
   background-color: rgb(205, 219, 223);
   font-family: "Ubuntu", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,366 +18,175 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Roboto", sans-serif;
 }
-body .box {
-  width: 800px;
-  height: 600px;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 20px;
-}
-body .box .menu {
-  width: 30%;
-  background-color: rgb(68, 108, 160);
-  border-radius: 20px;
-  position: relative;
-}
-body .box .menu .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  height: 400px;
-  margin: 10px;
-}
-body .box .menu .grid .math {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-body .box .menu .grid .math .describeStep {
-  text-transform: uppercase;
-  font-weight: 400;
-  color: white;
-}
-body .box .menu .grid .math:hover > .number {
-  background-color: rgb(59, 130, 163);
-  color: black;
-  font-weight: 500;
-}
-body .box .menu .grid .number {
-  height: 30px;
-  width: 30px;
-  text-align: center;
-  border-radius: 50%;
-  color: #fff;
-  border: 1px solid white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body .box .menu .grid .step {
-  margin: 10px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: white;
-  font-weight: 100;
-}
-body .box .info {
-  height: 600px;
-  width: 600px;
-  display: grid;
-  grid-template-columns: 600px;
-  grid-template-rows: 500px 100px;
-}
-body .box .info .wrapper {
-  min-height: 300px;
-  min-width: 500px;
-  margin: 20px;
-  grid-column: 1/1;
-  grid-row: 1/2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body .box .info .wrapper .header {
-  color: rgb(14, 14, 116);
-}
-body .box .info .wrapper .head {
-  height: 30px;
-  width: 440px;
-  margin-bottom: 20px;
-}
-body .box .info .wrapper .description {
-  color: gray;
-  margin-bottom: 20px;
-}
-body .box .info .step1a-input,
-body .box .info .step1b-input,
-body .box .info .step1c-input {
-  height: 40px;
-  width: 500px;
-  border: 2px solid gray;
-  border-radius: 10px;
-}
-body .box .info #nameText {
-  margin-top: 20px;
-  color: rgb(19, 19, 126);
-  height: 40px;
-  width: 500px;
-  display: block;
-}
-body .box .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-flow: row-reverse wrap-reverse;
-          flex-flow: row-reverse wrap-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  grid-column: 1/1;
-  grid-row: 2/3;
-}
-body .box .buttons .nextStep,
-body .box .buttons .backStep {
-  width: 120px;
-  height: 40px;
-  border-radius: 7px;
-  border-color: transparent;
-  background-color: rgb(12, 12, 97);
-  color: white;
-  margin: 20px;
-  font-weight: 400;
-}
-body .box .buttons .nextStep .next,
-body .box .buttons .nextStep .back,
-body .box .buttons .backStep .next,
-body .box .buttons .backStep .back {
-  font-weight: 600;
-}
-body .box .buttons .nextStep:hover,
-body .box .buttons .backStep:hover {
+body main {
+  height: 800px;
+  width: 1000px;
   background-color: #fff;
-  color: rgb(12, 12, 97);
-}
-body .box .chosen {
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-body .box .select {
-  max-height: 500px;
-  display: none;
-  grid-column: 1/1;
-  grid-row: 1/2;
-}
-body .box .select .secondView {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body .box .select .pselect {
-  line-height: 55px;
-}
-body .box .arcade,
-body .box .advanced,
-body .box .pro {
-  width: 150px;
-  height: 200px;
-  background-color: white;
-  margin: 10px;
-  display: inline-block;
-  border-radius: 15px;
-  border: 2px solid rgb(196, 196, 196);
   padding: 20px;
 }
-body .box .arcade .name,
-body .box .advanced .name,
-body .box .pro .name {
-  color: rgb(12, 12, 128);
-  font-weight: 800;
-  margin-top: 10px;
+body main .navigation {
+  background-color: rgb(28, 64, 182);
+  width: 300px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  height: 100%;
 }
-body .box .arcade .prize,
-body .box .advanced .prize,
-body .box .pro .prize {
-  font-size: 10px;
+body main .navigation .listElement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+body main .navigation .listElement .number {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+body main .navigation .listElement .number:hover {
+  background-color: rgb(63, 158, 161);
+  color: black;
+}
+body main .navigation .listElement .textAside {
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  line-height: 22px;
+}
+body main .navigation .listElement .textAside :nth-child(1) {
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgb(184, 181, 181);
+}
+body main .navigation .listElement .textAside :nth-child(2) {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+body main .content {
+  height: 100%;
+  width: 700px;
+  display: grid;
+  grid-template-columns: 700px;
+  grid-template-rows: 650px 110px;
+}
+body main .content footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 110px;
+  width: 700px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+body main .content footer .next,
+body main .content footer .back {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(13, 23, 58);
+  border-color: transparent;
+  color: #fff;
+  border-radius: 10px;
+}
+body main .content .wrapperFlex {
+  height: 760px;
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 60px;
+}
+body main .content .wrapperFlex .form {
+  width: 600px;
+  height: 400px;
+  grid-column: 1/1;
+  grid-row: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body main .content .wrapperFlex .form .header {
+  font-size: 30px;
+  color: rgb(6, 6, 73);
+}
+body main .content .wrapperFlex .form .describe {
   color: gray;
   margin-top: 10px;
+  font-weight: 400;
+  margin-bottom: 30px;
 }
-body .box .arcade:hover,
-body .box .advanced:hover,
-body .box .pro:hover {
-  border: 3px solid rgb(15, 15, 104);
+body main .content .wrapperFlex .form .inputContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-body .box .img {
-  width: 50px;
+body main .content .wrapperFlex .form .inputContainer label {
+  font-weight: 600;
+  color: rgb(15, 15, 105);
+  padding-bottom: 10px;
+}
+body main .content .wrapperFlex .form .inputContainer input {
   height: 50px;
-  background-color: yellow;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
-body .box .switcher {
-  height: 50px;
-  width: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body .box .toggle-control {
-  margin-top: 30px;
-  display: block;
-  position: relative;
-  padding-left: 80px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-body .box .toggle-control input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-body .box .toggle-control input:checked ~ .control {
-  background-color: rgb(9, 24, 104);
-}
-body .box .toggle-control input:checked ~ .control:after {
-  left: 60px;
-}
-body .box .toggle-control .control {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 80px;
-  border-radius: 12.5px;
-  background-color: darkgray;
-  -webkit-transition: background-color 0.15s ease-in;
-  transition: background-color 0.15s ease-in;
-}
-body .box .toggle-control .control:after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 15px;
-  height: 15px;
-  border-radius: 12.5px;
-  background: white;
-  -webkit-transition: left 0.15s ease-in;
-  transition: left 0.15s ease-in;
-}
-body .box .pickAdd-ons {
-  height: 500px;
-  width: 600px;
-}
-body .box .pickAdd-ons .thirdView {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-body .box .pickAdd-ons .thirdView .textBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 400px;
-}
-body .box .pickAdd-ons .buttons-third {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  max-height: 500px;
-  width: 600px;
-}
-body .box .pickAdd-ons .pick1,
-body .box .pickAdd-ons .pick2,
-body .box .pickAdd-ons .pick3 {
-  width: 400px;
-  height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 2px solid rgb(78, 78, 124);
-  border-radius: 10px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin: 10px 40px;
-}
-body .box .pickAdd-ons .pick1 .add-ons,
-body .box .pickAdd-ons .pick2 .add-ons,
-body .box .pickAdd-ons .pick3 .add-ons {
-  margin: 10px;
+body main .content .secondView {
+  display: none;
+  height: 200px;
+  width: 300px;
 }/*# sourceMappingURL=styles.css.map */

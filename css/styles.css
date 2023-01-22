@@ -128,9 +128,18 @@ body main .content footer .back {
   border-color: transparent;
   color: #fff;
   border-radius: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+body main .content footer .next:hover,
+body main .content footer .back:hover {
+  background-color: #fff;
+  color: rgb(13, 23, 58);
+  font-weight: 900;
 }
 body main .content .wrapperFlex {
-  height: 760px;
+  height: 560px;
   width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,7 +149,7 @@ body main .content .wrapperFlex {
           justify-content: center;
   padding-top: 60px;
 }
-body main .content .wrapperFlex .form {
+body main .content .wrapperFlex .view-0 {
   width: 600px;
   height: 400px;
   grid-column: 1/1;
@@ -153,17 +162,17 @@ body main .content .wrapperFlex .form {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body main .content .wrapperFlex .form .header {
+body main .content .wrapperFlex .view-0 .header {
   font-size: 30px;
   color: rgb(6, 6, 73);
 }
-body main .content .wrapperFlex .form .describe {
+body main .content .wrapperFlex .view-0 .describe {
   color: gray;
   margin-top: 10px;
   font-weight: 400;
   margin-bottom: 30px;
 }
-body main .content .wrapperFlex .form .inputContainer {
+body main .content .wrapperFlex .view-0 .inputContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,12 +181,12 @@ body main .content .wrapperFlex .form .inputContainer {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body main .content .wrapperFlex .form .inputContainer label {
+body main .content .wrapperFlex .view-0 .inputContainer label {
   font-weight: 600;
   color: rgb(15, 15, 105);
   padding-bottom: 10px;
 }
-body main .content .wrapperFlex .form .inputContainer input {
+body main .content .wrapperFlex .view-0 .inputContainer input {
   height: 50px;
   border-radius: 5px;
   border: 1px solid gray;
@@ -185,8 +194,206 @@ body main .content .wrapperFlex .form .inputContainer input {
   font-weight: 600;
   margin-bottom: 30px;
 }
-body main .content .secondView {
+body main .content .wrapperFlex .view-1 {
+  width: 600px;
+  height: 400px;
   display: none;
-  height: 200px;
-  width: 300px;
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body main .content .wrapperFlex .view-1 .header {
+  font-size: 30px;
+  color: rgb(6, 6, 73);
+  padding-left: 40px;
+}
+body main .content .wrapperFlex .view-1 .describe {
+  color: gray;
+  margin-top: 10px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  padding-left: 40px;
+}
+body main .content .wrapperFlex .view-1 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan {
+  width: 600px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro {
+  position: relative;
+  margin: 20px;
+  border: 2px solid rgb(148, 147, 147);
+  height: 50%;
+  width: 30%;
+  border-radius: 10px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade:hover,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced:hover,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro:hover {
+  border: 2px solid rgb(15, 4, 110);
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .imgIcon,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .imgIcon,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .imgIcon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 15%;
+  left: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .imgIcon i,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .imgIcon i,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .imgIcon i {
+  color: white;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .advancedHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .arcadeHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .proHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .advancedHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .arcadeHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .proHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .advancedHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .arcadeHeader,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .proHeader {
+  color: rgb(6, 6, 73);
+  font-weight: 800;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .pricelist,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .pricelist,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .pricelist {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .pricelist .prizeArcade,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .pricelist .prizeAdvanced,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .pricelist .prizePro,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .pricelist .prizeArcade,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .pricelist .prizeAdvanced,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .pricelist .prizePro,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .pricelist .prizeArcade,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .pricelist .prizeAdvanced,
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .pricelist .prizePro {
+  font-size: 15px;
+  color: gray;
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .arcade .imgIcon {
+  background-color: rgb(218, 114, 30);
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .advanced .imgIcon {
+  background-color: rgb(182, 66, 85);
+}
+body main .content .wrapperFlex .view-1 .flex .boxPlan .pro .imgIcon {
+  background-color: rgb(73, 39, 105);
+}
+body main .content .wrapperFlex .view-1 .flexSwitch {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body main .content .wrapperFlex .view-1 .flexSwitch .container {
+  width: 60%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(228, 228, 228);
+}
+body main .content .wrapperFlex .view-1 .flexSwitch .container span {
+  margin: 10px;
+}
+body main .content .wrapperFlex .view-1 .flexSwitch .container input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 50px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #ccc;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  outline: none;
+  cursor: pointer;
+}
+body main .content .wrapperFlex .view-1 .flexSwitch .container input::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: white;
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s;
+  z-index: 1000;
+}
+body main .content .wrapperFlex .view-1 .flexSwitch .container input:checked {
+  background-color: rgb(73, 73, 73);
+}
+body main .content .wrapperFlex .view-1 .flexSwitch .container input:checked::after {
+  left: 70%;
 }/*# sourceMappingURL=styles.css.map */

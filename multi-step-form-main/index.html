@@ -16,6 +16,10 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
+		/>
 
 		<title>Frontend Mentor | Multi-step form</title>
 	</head>
@@ -54,7 +58,7 @@
 
 			<div class="content">
 				<div class="wrapperFlex">
-					<div class="form">
+					<div class="view-0">
 						<h2 class="header">Personal info</h2>
 						<h4 class="describe">
 							Please provide your name, email address and phone number.
@@ -80,11 +84,51 @@
 							/>
 						</div>
 					</div>
-				</div>
+					<div class="view-1">
+						<h2 class="header">Select your plan</h2>
+						<h4 class="describe">
+							You have the option of monthly or yearly billing.
+						</h4>
+						<div class="flex">
+							<div class="boxPlan">
+								<div class="arcade">
+									<div class="imgIcon">
+										<i class="fa-solid fa-envelope"></i>
+									</div>
+									<div class="pricelist">
+										<h4 class="arcadeHeader">Arcade</h4>
+										<p class="prizeArcade">$9/mo</p>
+									</div>
+								</div>
+								<div class="advanced">
+									<div class="imgIcon">
+										<i class="fa-solid fa-envelope"></i>
+									</div>
+									<div class="pricelist">
+										<h4 class="advancedHeader">Advanced</h4>
+										<p class="prizeAdvanced">$12/mo</p>
+									</div>
+								</div>
+								<div class="pro">
+									<div class="imgIcon">
+										<i class="fa-solid fa-envelope"></i>
+									</div>
+									<div class="pricelist">
+										<h4 class="proHeader">Pro</h4>
+										<p class="prizePro">$15/mo</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flexSwitch">
+							<div class="container">
+								<span>Monthly</span>
 
-				<!-- secondView -->
-				<div class="secondView">
-					
+								<input type="checkbox" />
+								<span>Yearly</span>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<footer>

@@ -396,4 +396,178 @@ body main .content .wrapperFlex .view-1 .flexSwitch .container input:checked {
 }
 body main .content .wrapperFlex .view-1 .flexSwitch .container input:checked::after {
   left: 70%;
+}
+body main .content .wrapperFlex .view-2 {
+  width: 600px;
+  height: 400px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body main .content .wrapperFlex .view-2 .header {
+  font-size: 30px;
+  color: rgb(6, 6, 73);
+  padding-left: 40px;
+}
+body main .content .wrapperFlex .view-2 .describe {
+  color: gray;
+  margin-top: 10px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  padding-left: 40px;
+}
+body main .content .wrapperFlex .view-2 .wrapperThird {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper {
+  min-height: 300px;
+  min-width: 500px;
+}
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option {
+  width: 500px;
+  height: 90px;
+  border: 2px solid rgb(211, 211, 211);
+  margin: 20px;
+  border-radius: 10px;
+  background-color: rgb(231, 231, 231);
+  position: relative;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option:hover {
+  border: 2px solid rgb(95, 21, 117);
+}
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option .mainTitle,
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option .secondText {
+  margin: 20px;
+}
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option #option1,
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option #option2,
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .option #option3 {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: rgb(95, 21, 117);
+}
+body main .content .wrapperFlex .view-2 .wrapperThird .flexWrapper .prize {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: rgb(95, 21, 117);
+  font-size: 15px;
+  font-weight: 800;
+}
+body main .content .wrapperFlex .view-3 {
+  width: 600px;
+  height: 400px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .payments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgb(207, 206, 206);
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .payments .summary,
+body main .content .wrapperFlex .view-3 .wrapperFour .payments .service {
+  margin-bottom: 20px;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .payments .summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  padding: 10px;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .payments .service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  padding: 10px;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .payments .largerStorage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  padding: 10px;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .payments .customizable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  padding: 10px;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .summaryTotal {
+  height: 50px;
+  width: 400px;
+}
+body main .content .wrapperFlex .view-3 .header {
+  font-size: 30px;
+  color: rgb(6, 6, 73);
+  padding-left: 40px;
+}
+body main .content .wrapperFlex .view-3 .describe {
+  color: gray;
+  margin-top: 10px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  padding-left: 40px;
 }/*# sourceMappingURL=styles.css.map */

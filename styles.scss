@@ -21,7 +21,7 @@ body {
 		padding: 20px;
 
 		.navigation {
-			background-color: rgb(28, 64, 182);
+			background-color: rgb(24, 48, 128);
 			width: 300px;
 			border-radius: 10px;
 			display: flex;
@@ -31,7 +31,7 @@ body {
 			.listElement {
 				display: flex;
 				margin-bottom: 40px;
-				.number {
+				.numberOne, .numberSecond, .numberThree, .numberFour {
 					border: 1px solid white;
 					border-radius: 50%;
 					width: 40px;
@@ -387,50 +387,60 @@ body {
 						.payments {
 							display: flex;
 							width: 400px;
-						
+							border-radius: 10px;
 							flex-direction: column;
-							background-color: rgb(207, 206, 206);
+							background-color: rgb(235, 236, 236);
 
 							.summary,
 							.service {
 								margin-bottom: 20px;
 							}
 							.summary {
-								
 								display: flex;
 								justify-content: space-between;
 								width: 400px;
-								
+
 								padding: 10px;
 							}
 							.service {
-						
-								display: flex;
+								display: none;
 								justify-content: space-between;
 								width: 400px;
-							
+
 								padding: 10px;
 							}
-							.largerStorage{
-								
-								display: flex;
+							.largerStorage {
+								display: none;
 								justify-content: space-between;
 								width: 400px;
-							
+
 								padding: 10px;
 							}
-							.customizable{
-							
-								display: flex;
+							.customizable {
+								display: none;
 								justify-content: space-between;
 								width: 400px;
-								
+
 								padding: 10px;
 							}
 						}
-						.summaryTotal{
+						.summaryTotal {
+							height: 50px;
+							width: 50px;
+							margin-top: 20px;
+							font-weight: 800;
+							font-size: 20px;
+							color: rgb(47, 47, 122);
+						}
+						.calculateFlex {
+							display: flex;
 							height: 50px;
 							width: 400px;
+							justify-content: space-between;
+							.total {
+								margin-top: 20px;
+								font-weight: 800;
+							}
 						}
 					}
 

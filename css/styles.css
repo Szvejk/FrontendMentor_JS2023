@@ -33,7 +33,7 @@ body main {
   padding: 20px;
 }
 body main .navigation {
-  background-color: rgb(28, 64, 182);
+  background-color: rgb(24, 48, 128);
   width: 300px;
   border-radius: 10px;
   display: -webkit-box;
@@ -52,7 +52,7 @@ body main .navigation .listElement {
   display: flex;
   margin-bottom: 40px;
 }
-body main .navigation .listElement .number {
+body main .navigation .listElement .numberOne, body main .navigation .listElement .numberSecond, body main .navigation .listElement .numberThree, body main .navigation .listElement .numberFour {
   border: 1px solid white;
   border-radius: 50%;
   width: 40px;
@@ -71,7 +71,7 @@ body main .navigation .listElement .number {
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
-body main .navigation .listElement .number:hover {
+body main .navigation .listElement .numberOne:hover, body main .navigation .listElement .numberSecond:hover, body main .navigation .listElement .numberThree:hover, body main .navigation .listElement .numberFour:hover {
   background-color: rgb(63, 158, 161);
   color: black;
 }
@@ -505,11 +505,12 @@ body main .content .wrapperFlex .view-3 .wrapperFour .payments {
   display: -ms-flexbox;
   display: flex;
   width: 400px;
+  border-radius: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: rgb(207, 206, 206);
+  background-color: rgb(235, 236, 236);
 }
 body main .content .wrapperFlex .view-3 .wrapperFour .payments .summary,
 body main .content .wrapperFlex .view-3 .wrapperFour .payments .service {
@@ -526,9 +527,7 @@ body main .content .wrapperFlex .view-3 .wrapperFour .payments .summary {
   padding: 10px;
 }
 body main .content .wrapperFlex .view-3 .wrapperFour .payments .service {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -536,9 +535,7 @@ body main .content .wrapperFlex .view-3 .wrapperFour .payments .service {
   padding: 10px;
 }
 body main .content .wrapperFlex .view-3 .wrapperFour .payments .largerStorage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -546,9 +543,7 @@ body main .content .wrapperFlex .view-3 .wrapperFour .payments .largerStorage {
   padding: 10px;
 }
 body main .content .wrapperFlex .view-3 .wrapperFour .payments .customizable {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -557,7 +552,25 @@ body main .content .wrapperFlex .view-3 .wrapperFour .payments .customizable {
 }
 body main .content .wrapperFlex .view-3 .wrapperFour .summaryTotal {
   height: 50px;
+  width: 50px;
+  margin-top: 20px;
+  font-weight: 800;
+  font-size: 20px;
+  color: rgb(47, 47, 122);
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .calculateFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
   width: 400px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body main .content .wrapperFlex .view-3 .wrapperFour .calculateFlex .total {
+  margin-top: 20px;
+  font-weight: 800;
 }
 body main .content .wrapperFlex .view-3 .header {
   font-size: 30px;
